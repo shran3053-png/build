@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Daily focus</p>
+          <h1>Build Board</h1>
+        </div>
+        <button id="clear-completed" class="ghost-btn" type="button">Clear completed</button>
+      </header>
+
+      <main class="board">
+        <section class="panel stats-panel">
+          <div class="stat">
+            <span class="stat-label">Tasks</span>
+            <strong id="task-count">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Done</span>
+            <strong id="done-count">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Momentum</span>
+            <strong id="progress-value">0%</strong>
+          </div>
+        </section>
+
+        <section class="panel composer-panel">
+          <form id="task-form" class="task-form">
+            <label class="sr-only" for="task-input">Add a task</label>
+            <input id="task-input" name="task" type="text" placeholder="Add a small win for today..." maxlength="120" required />
+            <button type="submit">Add</button>
+          </form>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="list-header">
+            <h2>Today’s plan</h2>
+            <span id="tip" class="tip">Keep going.</span>
+          </div>
+          <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
